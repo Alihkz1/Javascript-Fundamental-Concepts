@@ -14,8 +14,11 @@ outerValue();
 function keepVariablePrivate() {
   let privateVariable = 0;
   return {
-    value() {
+    get() {
       return privateVariable;
+    },
+    set(v) {
+      privateVariable = v;
     },
     incrementValue() {
       privateVariable++;
@@ -23,10 +26,11 @@ function keepVariablePrivate() {
   };
 }
 const func = keepVariablePrivate(); /* can't access the variable directly */
+func.set(10000);
 func.incrementValue();
 func.incrementValue();
 func.incrementValue(); /* it remembers past upgrades */
-// console.log(func.value());
+// console.log(func.get());
 
 /* useCase 2: breaking functions into smaller functions */
 /* dividing the jobs into separated functions  */
@@ -35,8 +39,9 @@ function multiply(a) {
     return a * b;
   };
 }
-const result = multiply(2);
-const finalValue = result(10);
+const result =
+  multiply(2); /* a = 2; result is a function that remembers a = 2 forever */
+const finalValue = result(10); /* b = 10 */
 
 /* useCase 3: catching expensive computations */
 const slowSquare = (x) => x * x;
@@ -45,10 +50,9 @@ function memoize(fn) {
   return function (arg) {
     if (cache[arg]) return cache[arg];
     cache[arg] = fn(arg);
-    console.log("cached new item!");
     return cache[arg];
   };
 }
 const fastSquare = memoize(slowSquare);
-// console.log(fastSquare(2));
-// console.log(fastSquare(2));
+// console.log(fastSquare(2)); /* 2 is arg */
+// console.log(fastSquare(2)); /* 2 is arg */
