@@ -29,9 +29,16 @@ const printer = (error, message) => {
 
 fetchUserById(1, printer);
 
-/* callback hell solution: */
-// getUser(1)
-//     .then(user => getPosts(user.id))
-//     .then(posts => getComments(posts[0].id))
-//     .then(comments => console.log(comments))
-//     .catch(error => console.error(error));
+/* callback hell
+ getUser(1)
+     .then(user => getPosts(user.id))
+     .then(posts => getComments(posts[0].id))
+     .then(comments => console.log(comments))
+     .catch(error => console.error(error));
+ getUser(1, (user) => {
+    getPosts(user.id, (posts) => {
+        getComments(posts[0].id, (comments) => {
+            console.log(comments);
+        });
+    });
+}); */
