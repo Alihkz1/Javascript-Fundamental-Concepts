@@ -39,9 +39,23 @@ class LinkedList<T> {
     return null;
   }
 
-  public delete(value: T): void {}
+  public delete(value: T): void {
+    let current = this.head;
+    while (current) {
+      if (current.value == value) {
+      }
+    }
+  }
 
-  public print(): void {}
+  public print(): void {
+    let current = this.head;
+    const values: T[] = [];
+    while (current) {
+      values.push(current.value);
+      current = current.next;
+    }
+    console.log(values.toString());
+  }
 }
 
 // const linkedList = new LinkedList<number>();
