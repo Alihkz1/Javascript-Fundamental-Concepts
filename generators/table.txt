@@ -1,0 +1,6 @@
+| Feature             | Regular Function | Generator Function    |
+| ------------------- | ---------------- | --------------------- |
+| Return type         | Single value     | Iterable (`Iterator`) |
+| Can pause           | ❌ No             | ✅ Yes (via `yield`)   |
+| Symbol.iterator     | ❌ No             | ✅ Yes                 |
+| Use with `for...of` | ❌ No             | ✅ Yes                 |
