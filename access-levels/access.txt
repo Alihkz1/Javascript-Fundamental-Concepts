@@ -1,0 +1,16 @@
+| Feature            | `#private` (JS) | `private` (TS)      | `protected` (TS)    |
+| ------------------ | --------------- | ------------------- | ------------------- |
+| Enforced by        | Runtime         | TypeScript compiler | TypeScript compiler |
+| Access in class    | ✅ Yes           | ✅ Yes               | ✅ Yes               |
+| Access in subclass | ❌ No            | ❌ No                | ✅ Yes               |
+| Access outside     | ❌ No            | ❌ (TS only)         | ❌ (TS only)         |
+| Reflection         | ❌ Not possible  | ✅ Yes (at runtime)  | ✅ Yes (at runtime)  |
+
+| Feature                 | `readonly`                               | `static`                                |
+| ----------------------- | ---------------------------------------- | --------------------------------------- |
+| Purpose                 | Prevent changes to a property after init | Attach property/method to class itself  |
+| Applies to              | Instance properties                      | Class-level properties/methods          |
+| Accessed via            | `this.property`                          | `ClassName.property`                    |
+| Mutable?                | ❌ No (after constructor)                 | ✅ Yes (unless combined with `readonly`) |
+| Available on instances? | ✅ Yes                                    | ❌ No                                    |
+  
