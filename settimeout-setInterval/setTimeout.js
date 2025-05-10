@@ -34,8 +34,6 @@ setTimeout(() => {
 }, 1000);
 
 // code below did not worked because of diffrent instances
-// myTimeout(callback, 2000, "meow");
-
 // setTimeout(() => {
 //   const { clear } = myTimeout();
 //   clear();
