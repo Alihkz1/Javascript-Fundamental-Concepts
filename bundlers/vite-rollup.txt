@@ -1,0 +1,32 @@
+🔧 What is Rollup.js?
+Rollup.js is a modern JavaScript module bundler.
+
+It bundles your code into a smaller, optimized package
+
+Supports ES Modules (ESM) natively
+
+Great for libraries and production builds
+
+Handles tree-shaking (removes unused code)
+
+Think of it as the engine that takes your source files and produces optimized JavaScript.
+
+⚡ What is Vite?
+Vite is a modern frontend build tool that:
+
+Offers lightning-fast development with native ES Modules
+
+Uses Rollup under the hood for production builds
+
+Has great support for frameworks like Vue, React, Angular, Svelte
+
+Vite focuses on developer experience and speed in dev mode, but it hands off to Rollup when building for production.
+
+
+
+| Feature              | Vite                         | Rollup               |
+| -------------------- | ---------------------------- | -------------------- |
+| Dev mode             | Uses native ESM, fast reload | ❌ Not used           |
+| Production build     | ✅ Uses Rollup                | ✅ Standalone bundler |
+| Configuration format | Vite config is Rollup-like   | Native Rollup config |
+| Plugins              | Uses many Rollup plugins     | Uses Rollup plugins  |

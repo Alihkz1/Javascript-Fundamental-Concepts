@@ -33,7 +33,7 @@ setTimeout(() => {
   console.log("cleared");
 }, 1000);
 
-// code below did not worked because of diffrent instances
+// code below did not worked because of different instances
 // setTimeout(() => {
 //   const { clear } = myTimeout();
 //   clear();

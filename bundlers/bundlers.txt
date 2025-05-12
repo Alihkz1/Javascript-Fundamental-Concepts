@@ -1,0 +1,7 @@
+| Tool        | Uses Rollup Internally? | Written In | Key Focus                                   |
+| ----------- | ----------------------- | ---------- | ------------------------------------------- |
+| **Vite**    | ✅ Yes (for production)  | TypeScript | Fast dev (ESM), Rollup for optimized builds |
+| **Webpack** | ❌ No                    | JavaScript | Highly configurable, plugin ecosystem       |
+| **Parcel**  | ❌ No                    | Rust (v2)  | Zero config, smart auto-detection           |
+| **esbuild** | ❌ No                    | Go         | Blazing fast bundling and transpiling       |
+| **Rollup**  | N/A                     | JavaScript | Library bundling, tree-shaking              |
