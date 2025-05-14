@@ -1,4 +1,4 @@
 Timers -> setTimeout, setInterval
 Array prototype methods -> map, filter, reduce
-Delays -> throttle, Debounce
+Delays -> throttle, Debounce, Delay, Cancelable delay
 Publish + subscribe
