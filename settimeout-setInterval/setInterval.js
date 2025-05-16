@@ -1,27 +1,29 @@
 function myInterval(callback, delay, ...args) {
   let start = Date.now();
   let timeoutId;
+
   function inner() {
     const loopTime = Date.now() - start >= delay;
     if (loopTime) {
       callback(...args);
       start = Date.now();
     }
-    timeoutId = setTimeout(() => {
-      inner();
-    }, 1);
+    // timeoutId = setTimeout(() => {
+    //   inner();
+    // }, 1); refactored:
+    timeoutId = setTimeout(inner, 1);
   }
-
+  
   inner();
 
   return {
-    clear: () => clearInterval(timeoutId),
+    clear: () => clearTimeout(timeoutId),
   };
 }
 
 const start = Date.now();
 const interval = myInterval(() => {
-  console.log(Date.now() - start);
-  // const { clear } = interval.clear();
-  // if (Date.now() - start > 6000) clear();
+  const elapsed = Date.now() - start;
+  console.log(elapsed);
+  if (elapsed > 4000) interval.clear();
 }, 2000);
