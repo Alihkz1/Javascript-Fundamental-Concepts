@@ -1,11 +1,12 @@
+const meowLogger = () => console.log("🐈‍⬛meow");
+
 // first attempt
 function debounceCreator(callback, timeout) {
-  // how to clear timeout?
-  const timeoutId = setTimeout(() => {
+  setTimeout(() => {
     callback();
   }, timeout);
 }
-debounceCreator(() => console.log("meow"), 2000);
+debounceCreator(meowLogger, 2000);
 
 // the answer
 function myDebounce(callback, timeout) {
@@ -17,5 +18,5 @@ function myDebounce(callback, timeout) {
     }, timeout);
   };
 }
-const final = myDebounce(() => console.log("meow"), 2000);
+const final = myDebounce(meowLogger, 2000);
 final();
