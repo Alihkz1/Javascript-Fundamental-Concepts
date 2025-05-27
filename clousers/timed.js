@@ -1,9 +1,9 @@
 function timed(fn) {
-  return function (...args) {
+  return function (innerArg) {
     console.log(`Entering function ${fn.name}`);
     let startTime = Date.now();
     try {
-      return fn(...args);
+      return fn(innerArg);
     } finally {
       console.log(
         `Exiting function ${fn.name} after ${Date.now() - startTime}ms`

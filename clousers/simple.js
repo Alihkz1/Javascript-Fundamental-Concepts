@@ -8,3 +8,12 @@ function outer() {
 
 const outerValue = outer();
 outerValue();
+
+// advanced syntax
+function outer() {
+  const outerValue = "im from outer";
+  return function () {
+    console.log(outerValue);
+  };
+}
+outer()();

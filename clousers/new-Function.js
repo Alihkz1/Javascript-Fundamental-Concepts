@@ -4,5 +4,5 @@ function constructFunction() {
   return new Function("return scope");
 }
 
-const value = constructFunction()();
+const value = constructFunction()(); /* invoking inner function */
 console.log(value);
