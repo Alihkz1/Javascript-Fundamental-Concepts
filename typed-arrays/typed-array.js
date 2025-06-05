@@ -17,3 +17,11 @@ const unsigned = new Uint8Array(2);
 unsigned[0] = 200;
 unsigned[1] = 400;
 console.log(unsigned);
+
+const ints = new Int16Array(10);
+console.log(
+  ints
+    .fill(3)
+    .map((x) => x * x)
+    .join("")
+);
