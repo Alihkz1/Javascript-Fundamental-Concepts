@@ -1,13 +1,13 @@
 function tag(strings, ...args) {
   console.log(strings);
   console.log(args);
-  return args.reduce((total, current, i) => {
-    total += strings[i] + current;
+  return strings.reduce((total, current, i) => {
+    return (total += args[i - 1] + current);
   });
 }
 
-const name = "Ali";
+const myName = "Ali";
 const age = 23;
 
-const myStr = tag`Hello dear ${name}; Your age is ${age}`;
+const myStr = tag`Hello dear ${myName}; Your age is ${age}`;
 console.log(myStr);
