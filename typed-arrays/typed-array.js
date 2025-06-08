@@ -25,3 +25,6 @@ console.log(
     .map((x) => x * x)
     .join("")
 );
+
+console.log(Array.isArray(signed));
+console.log(typeof signed);
