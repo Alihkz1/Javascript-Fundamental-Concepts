@@ -5,5 +5,5 @@ async function wait(duration) {
   });
 }
 
-const delay = await wait(2000);
+const delay = await wait(-200);
 console.log("Hello after 2s");
