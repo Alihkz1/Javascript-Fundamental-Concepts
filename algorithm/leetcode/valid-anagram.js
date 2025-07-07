@@ -4,12 +4,8 @@
  * @return {boolean}
  */
 var isAnagram = function (s, t) {
-  console.log(Array.from(t));  
-  return (
-    Array.from(t).findIndex((l) => {
-      return Array.from(s).findIndex(l) == -1;
-    }) != -1
-  );
+  if (s.length != t.length) return false;
+  return s.split('').sort().join('') === t.split('').sort().join('')
 };
 
 let s = "anagram";
