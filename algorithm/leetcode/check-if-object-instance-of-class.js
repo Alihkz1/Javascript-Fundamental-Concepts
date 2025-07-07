@@ -9,7 +9,7 @@ var checkIfInstanceOf = function (obj, classFunction) {
     (typeof obj === "number" && classFunction === Number) ||
     (typeof obj === "string" && classFunction === String) ||
     (typeof obj === "bigint" && classFunction === BigInt) ||
-    (typeof obj === "boolean" && classFunction === Boolean)
+    (typeof obj === "boolean" && classFunction === Boolean) || 
     (typeof obj === "object" && classFunction)
   ) {
     return true;
