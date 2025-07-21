@@ -1,0 +1,20 @@
+Yes — unobserving an image (or any element) using IntersectionObserver.unobserve() has several practical benefits, especially for performance and memory management.
+
+✅ Benefits of Unobserving an Image
+1. Performance Optimization
+If you're observing many images (e.g., in a gallery or infinite scroll), keeping all of them observed after they've already loaded or triggered an action is wasteful.
+
+unobserve() stops tracking that element, so the browser stops checking it on every scroll or resize.
+
+2. Memory Management
+Keeping observers alive unnecessarily can increase memory usage, especially on mobile devices.
+
+Unobserving helps garbage collection clean up DOM references earlier.
+
+3. Avoiding Redundant Triggers
+Once an image has been lazy-loaded or animated, you don’t want it to trigger the callback again.
+
+Unobserving ensures that the callback only runs once (e.g., the first time an image enters the viewport).
+
+4. Cleaner Logic
+Your logic becomes more predictable when you explicitly unobserve things you’re done with.
