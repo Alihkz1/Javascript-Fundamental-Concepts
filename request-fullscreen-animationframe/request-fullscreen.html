@@ -1,0 +1,15 @@
+<div id="box" style="width:200px; height:200px; background:red;"></div>
+<button onclick="goFull()">Go Fullscreen</button>
+
+<script>
+  function goFull() {
+    const box = document.getElementById("box");
+    if (box.requestFullscreen) {
+      box.requestFullscreen();
+    } else if (box.webkitRequestFullscreen) { // Safari
+      box.webkitRequestFullscreen();
+    } else if (box.msRequestFullscreen) { // IE11
+      box.msRequestFullscreen();
+    }
+  }
+</script>
