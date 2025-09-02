@@ -9,8 +9,6 @@ const Iran = {
 };
 // logger.call(Iran);
 
-
-
 // .apply(); like .call() but with array of arguments
 function greet(city) {
   console.log(`${this.name} from ${city} is greeting!`);
@@ -20,4 +18,4 @@ const greeter = {
   name: "Sarah",
 };
 
-greet(greeter, ["NY"]);
+greet.apply(greeter, ["NY"]);

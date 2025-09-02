@@ -1,3 +1,5 @@
+const name = "meow!";
+
 const personObject = {
   name: "NormalPerson",
   regularFunction: function () {
@@ -8,5 +10,5 @@ const personObject = {
   },
 };
 
-personObject.regularFunction()
-personObject.arrowFunction()
+personObject.regularFunction();
+personObject.arrowFunction();

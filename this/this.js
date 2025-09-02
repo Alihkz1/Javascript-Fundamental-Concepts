@@ -20,3 +20,9 @@ person.greet(); // prints Hello Ali
 /* case 3 */
 const boundedToPerson = person.greet.bind(person); /* .bind(contextObject)  */
 boundedToPerson();
+
+function cat() {
+  console.log(this);
+}
+
+cat();
