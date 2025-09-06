@@ -1,0 +1,68 @@
+// Variables
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Body styles
+body {
+  font-family: Arial, sans-serif;
+  background-color: $secondary-color;
+  color: white;
+}
+
+// Container with mixin
+.container {
+  @include flex-center;
+  height: 100vh;
+  flex-direction: column;
+
+  h1 {
+    color: $primary-color;
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: $primary-color;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+
+@function double($value) {
+  @return $value * 2;
+}
+
+.box {
+  width: double(50px); // 100px
+  height: double(20px); // 40px
+  background-color: red;
+}
+
+
+@function size($type) {
+  @if $type == 'small' {
+    @return 10px;
+  } @else if $type == 'medium' {
+    @return 20px;
+  } @else {
+    @return 30px;
+  }
+}
+
+.card {
+  padding: size('medium'); // 20px
+}
