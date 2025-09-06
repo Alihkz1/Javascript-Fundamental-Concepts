@@ -10,8 +10,8 @@ function createIterator(array) {
   };
 }
 const iterator = createIterator([4, 8, 6]);
-// console.log(iterator.next());
-// console.log(iterator.next());
-// console.log(iterator.next());
-// console.log(iterator.next());
-// console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
